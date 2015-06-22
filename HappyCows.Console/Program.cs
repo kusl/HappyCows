@@ -13,6 +13,8 @@ namespace HappyCows.Console
                 client.Encoding = Encoding.UTF8;
                 var summonerInformation = GetSummonerInformationByName(client: client, apiKey: apiKey, summonerName: "kkus");
                 System.Console.WriteLine(summonerInformation);
+                var championInformation = GetAllChampionInformaiton(client: client, apiKey: apiKey);
+                System.Console.WriteLine(championInformation);
                 System.Console.Read();
             }
         }
@@ -21,9 +23,15 @@ namespace HappyCows.Console
         {
             const string urlPrefix = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/";
             const string roster = "by-name";
-            string apiKeySuffix = "?api_key=" + apiKey;
-            var returnString = client.DownloadString(urlPrefix + roster + "/" + summonerName + apiKeySuffix);
-            return returnString;
+            var apiKeySuffix = "?api_key=" + apiKey;
+            return client.DownloadString(urlPrefix + roster + "/" + summonerName + apiKeySuffix);
+        }
+
+        private static string GetAllChampionInformaiton(WebClient client, string apiKey)
+        {
+            const string urlPrefix = "https://na.api.pvp.net/api/lol/na/v1.2/champion";
+            var apiKeySuffix = "?api_key=" + apiKey;
+            return client.DownloadString(urlPrefix + apiKeySuffix);
         }
     }
 }
