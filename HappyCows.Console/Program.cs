@@ -10,13 +10,15 @@ namespace HappyCows.Console
             const string apiKey = "";
             using (var client = new WebClient())
             {
-                client.Encoding = Encoding.UTF8;
-                var summonerInformation = GetSummonerInformationByName(client: client, apiKey: apiKey, summonerName: "kkus");
-                System.Console.WriteLine(summonerInformation);
-                var championInformation = GetAllChampionInformaiton(client: client, apiKey: apiKey);
-                System.Console.WriteLine(championInformation);
-                System.Console.Read();
-                var summonerLeague = GetLeagueBySummoner(client: client, apiKey: apiKey, summonerId: "20582960");
+                //client.Encoding = Encoding.UTF8;
+                //var summonerInformation = GetSummonerInformationByName(client: client, apiKey: apiKey, summonerName: "kkus");
+                //System.Console.WriteLine(summonerInformation);
+                //var championInformation = GetAllChampionInformaiton(client: client, apiKey: apiKey);
+                //System.Console.WriteLine(championInformation);
+                //System.Console.Read();
+                //var summonerLeague = GetLeagueBySummoner(client: client, apiKey: apiKey, summonerId: "20582960");
+                var summonerLeague =
+                    "{\"20582960\":[{\"name\":\"Corki's Buddies\",\"tier\":\"GOLD\",\"queue\":\"RANKED_SOLO_5x5\",\"entries\":[{\"playerOrTeamId\":\"20582960\",\"playerOrTeamName\":\"Best Dictator NK\",\"division\":\"IV\",\"leaguePoints\":39,\"wins\":26,\"losses\":26,\"isHotStreak\":false,\"isVeteran\":false,\"isFreshBlood\":false,\"isInactive\":false}]},{\"name\":\"Malzahar's Berserkers\",\"tier\":\"BRONZE\",\"queue\":\"RANKED_TEAM_5x5\",\"entries\":[{\"playerOrTeamId\":\"TEAM-29dfa190-fa7b-11e3-9c89-782bcb4d1861\",\"playerOrTeamName\":\"Fing Go Time\",\"division\":\"IV\",\"leaguePoints\":74,\"wins\":3,\"losses\":7,\"isHotStreak\":false,\"isVeteran\":false,\"isFreshBlood\":false,\"isInactive\":false}]},{\"name\":\"Wukong's Dervish\",\"tier\":\"GOLD\",\"queue\":\"RANKED_TEAM_5x5\",\"entries\":[{\"playerOrTeamId\":\"TEAM-a743b670-bc91-11e4-98cf-c81f66dd45c9\",\"playerOrTeamName\":\"Cuti3 Patooties\",\"division\":\"V\",\"leaguePoints\":26,\"wins\":10,\"losses\":5,\"isHotStreak\":false,\"isVeteran\":false,\"isFreshBlood\":false,\"isInactive\":false}]}]}";
             }
         }
 
